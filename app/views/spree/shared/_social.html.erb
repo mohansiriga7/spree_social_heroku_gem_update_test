@@ -3,7 +3,7 @@
       <h4><%= Spree.t(:sign_in_through_one_of_these_services) %></h4>
   <% end %>
 
-  <% user = @spree_user || @user %>
+  <% user = @spree_user || @user || Spree::User.new %>
   <% Spree::AuthenticationMethod.available_for(user).each do |method| %>
       <%= link_to(content_tag(:i, '', class: "icon-spree-#{method.provider.to_url}-circled"),
                   omniauth_authorize_url(user, method.provider),
