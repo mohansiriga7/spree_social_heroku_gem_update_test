@@ -5,7 +5,7 @@ Spree::Core::Engine.add_routes do
              controllers: { omniauth_callbacks: 'spree/omniauth_callbacks' },
              path: Spree::SocialConfig[:path_prefix]
   resources :user_authentications
-
+#use a comment
   get 'account' => 'users#show', as: 'user_root'
 
   namespace :admin do
